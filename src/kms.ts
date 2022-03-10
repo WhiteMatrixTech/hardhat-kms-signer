@@ -3,7 +3,9 @@ import * as asn1 from "asn1.js";
 import { KMS } from "aws-sdk";
 import * as EthUtil from "ethereumjs-util";
 
-export const kms = new KMS();
+import { AWS_CONFIG } from "./config/aws.region";
+
+export const kms = new KMS(AWS_CONFIG);
 
 export interface SignParams {
   keyId: KMS.SignRequest["KeyId"];
